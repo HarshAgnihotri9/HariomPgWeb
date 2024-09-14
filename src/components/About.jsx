@@ -16,13 +16,13 @@ const AboutHariomPG = () => {
           <p className="mt-4 text-gray-700 text-lg md:text-xl font-light font-sans">
             Enjoy a friendly atmosphere and top-notch services in the heart of the city. Whether you are here to work or study, Hariom PG is your ideal home away from home.
           </p>
-          <button className="mt-6 px-6 py-3 bg-green-600 text-black font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300">
+          <button className="mt-6 px-6 py-3 bg-sky-500 text-black font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
             Learn More
           </button>
         </div>
 
         {/* Right Side - Image */}
-        <div className="md:w-1/3 mt-8 md:mt-0 px-6">
+        <div className="md:w-1/3 mt-8 md:mt-0 px-6 mr-24">
           <img
             src={logo} // Replace this with an actual image URL of the PG
             alt="Hariom PG"
