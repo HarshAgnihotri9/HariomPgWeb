@@ -13,6 +13,7 @@ import OptionsScreen from './components/OptionsScreen';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/Services';
+import LearnMore from './components/LearnMore';
 
 function App() {
   useEffect(() => {
@@ -72,6 +73,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/About" element={<AboutPage/>} />
         <Route path="/Services" element={<ServicesPage/>} />
+        <Route path="/LearnMore" element={<LearnMore/>} />
+        
 
       </Routes>
       {/* <Footer /> */}

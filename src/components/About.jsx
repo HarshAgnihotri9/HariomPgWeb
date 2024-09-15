@@ -6,8 +6,12 @@ import Facilities from './Facilities';
 import EnquiryForm from './EnquiryForm';
 import Footer from './Footer';
 import Navbar from './Navbar';
-
+import { useNavigate } from 'react-router-dom';
 const AboutHariomPG = () => {
+  const navigate = useNavigate();
+  const handlelearnMore =()=>{
+    navigate("/LearnMore");
+  }
   return (
     <>
     <Navbar/>
@@ -24,7 +28,7 @@ const AboutHariomPG = () => {
           <p className="mt-4 text-gray-700 text-lg md:text-xl font-light font-sans">
             Enjoy a friendly atmosphere and top-notch services in the heart of the city. Whether you are here to work or study, Hariom PG is your ideal home away from home.
           </p>
-          <button className="mt-6 px-6 py-3 bg-sky-500 text-black font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+          <button className="mt-6 px-6 py-3 bg-sky-500 text-black font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300" onClick={handlelearnMore}>
             Learn More
           </button>
         </div>

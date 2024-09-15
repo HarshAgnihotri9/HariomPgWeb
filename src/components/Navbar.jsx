@@ -1,21 +1,49 @@
-import React, { useState } from 'react';
-import logo from '../assets/images/logo.png'
+import React, { useState, useEffect } from 'react';
+import logo from '../assets/images/logo.png';
+import { Navigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // For showing/hiding navbar
+  const [lastScrollY, setLastScrollY] = useState(0); // To track the last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show navbar when scrolling up, hide it when scrolling down
+      if (currentScrollY < lastScrollY) {
+        setIsVisible(true); // Show navbar
+      } else {
+        setIsVisible(false); // Hide navbar
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-10 top-0">
+    <nav
+      className={`bg-white shadow-md fixed w-full z-10 top-0 transform transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
           <div className="flex items-center">
             <img
-              src= {logo} // Replace this with your logo URL
+              src={logo}
               alt="Logo"
               className="h-10 w-10 mr-2"
             />
-            <span className="text-2xl font-bold text-black-500 font-custom">
+            <span className="text-2xl font-bold text-black-500 font-custom" onClick={Navigate('/')}>
               HARIOM PG
             </span>
           </div>
@@ -73,25 +101,25 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-2">
             <a
-              href="#home"
+              href="/"
               className="block px-2 py-2 text-sm text-gray-600 hover:bg-gray-100"
             >
               Home
             </a>
             <a
-              href="#about"
+              href="/about"
               className="block px-2 py-2 text-sm text-gray-600 hover:bg-gray-100"
             >
               About
             </a>
             <a
-              href="#services"
+              href="/services"
               className="block px-2 py-2 text-sm text-gray-600 hover:bg-gray-100"
             >
               Services
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="block px-2 py-2 text-sm text-gray-600 hover:bg-gray-100"
             >
               Contact
