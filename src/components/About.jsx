@@ -1,9 +1,17 @@
 import React from 'react';
 import logo from '../assets/images/hariom.jpg'
+import OptionsScreen from './OptionsScreen';
+import PGList from './pgList';
+import Facilities from './Facilities';
+import EnquiryForm from './EnquiryForm';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const AboutHariomPG = () => {
   return (
-    <div className="bg-white-100 py-16 mt-24">
+    <>
+    <Navbar/>
+    <div className="bg-white-100 py-16 mt-24 h-full">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Left Side - Text */}
         <div className="md:w-1/2 text-left px-6">
@@ -22,15 +30,21 @@ const AboutHariomPG = () => {
         </div>
 
         {/* Right Side - Image */}
-        <div className="md:w-1/3 mt-8 md:mt-0 px-6 mr-24">
+        <div className="md:w-1/3 mt-8 md:mt-0 px-6 ">
           <img
             src={logo} // Replace this with an actual image URL of the PG
             alt="Hariom PG"
             className="w-full h-auto rounded-lg shadow-lg transform hover:scale-105 transition duration-300 mr-48 "
-          />
+            />
         </div>
       </div>
     </div>
+    <OptionsScreen/>
+    <PGList/>
+    <Facilities/>
+    <EnquiryForm/>
+    <Footer/>
+    </>
   );
 };
 

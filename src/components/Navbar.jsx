@@ -22,16 +22,16 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6">
-            <a href="#home" className="text-gray-600 hover:text-blue-600 font-medium">
+            <a href="/" className="text-gray-600 hover:text-blue-600 font-medium">
               Home
             </a>
-            <a href="#about" className="text-gray-600 hover:text-blue-600 font-medium">
+            <a href="/About" className="text-gray-600 hover:text-blue-600 font-medium">
               About
             </a>
-            <a href="#services" className="text-gray-600 hover:text-blue-600 font-medium">
+            <a href="/Services" className="text-gray-600 hover:text-blue-600 font-medium">
               Services
             </a>
-            <a href="#contact" className="text-gray-600 hover:text-blue-600 font-medium">
+            <a href="/contact" className="text-gray-600 hover:text-blue-600 font-medium">
               Contact
             </a>
           </div>
