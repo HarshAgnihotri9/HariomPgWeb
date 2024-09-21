@@ -14,6 +14,8 @@ import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/Services';
 import LearnMore from './components/LearnMore';
+import FlatsScreen from './components/Flats/FlatsScreen';
+import PGScreen from './components/Pg/PgScreen';
 
 function App() {
   useEffect(() => {
@@ -74,6 +76,9 @@ function App() {
         <Route path="/About" element={<AboutPage/>} />
         <Route path="/Services" element={<ServicesPage/>} />
         <Route path="/LearnMore" element={<LearnMore/>} />
+        <Route path="/Flats" element={<FlatsScreen/>} />
+        <Route path="/Pgs" element={<PGScreen/>} />
+
         
 
       </Routes>
