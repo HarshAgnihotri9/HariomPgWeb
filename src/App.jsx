@@ -16,6 +16,7 @@ import ServicesPage from './components/Services';
 import LearnMore from './components/LearnMore';
 import FlatsScreen from './components/Flats/FlatsScreen';
 import PGScreen from './components/Pg/PgScreen';
+import DevicesScreen from './components/Flats/FlatsScreen';
 
 function App() {
   useEffect(() => {
@@ -76,13 +77,13 @@ function App() {
         <Route path="/About" element={<AboutPage/>} />
         <Route path="/Services" element={<ServicesPage/>} />
         <Route path="/LearnMore" element={<LearnMore/>} />
-        <Route path="/Flats" element={<FlatsScreen/>} />
+        <Route path="/Flats" element={<DevicesScreen/>} />
         <Route path="/Pgs" element={<PGScreen/>} />
 
         
 
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
       <div className="circle"></div>
       <div className="circle"></div>
       <div className="circle"></div>

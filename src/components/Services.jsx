@@ -107,9 +107,9 @@ const ServicesPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-indigo-600 text-white py-6 text-center">
+      {/* <footer className="bg-indigo-600 text-white py-6 text-center">
         <p>&copy; 2024 HariomPG. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

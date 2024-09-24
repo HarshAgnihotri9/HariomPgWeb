@@ -51,7 +51,7 @@ const AboutHariomPG = () => {
       {/* <PGList /> */}
       <Facilities />
       <EnquiryForm />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
