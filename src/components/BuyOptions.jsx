@@ -13,7 +13,7 @@ const BuyOptions = () => {
         {/* Card 1: Buy Flats */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
           <img
-            src="https://img.staticmb.com/mbimages/project/Photo_h0_w320/Project-Photo-49-Paras-Tierea-Noida-5000558_1296_976_0_320.JPEG"
+            src="http://images.unsplash.com/photo-1558981082-c7d43331cd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZmxhdHN8fDB8fHx8MTYzMTY1MTEyMg&ixlib=rb-1.2.1&q=80&w=1080"
             alt="Buy Flats"
             className="w-full h-40 sm:h-48 md:h-56 object-cover"
           />
@@ -49,7 +49,7 @@ const BuyOptions = () => {
         {/* Card 3: Buy Land */}
         <div className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
           <img
-            src="https://tse4.mm.bing.net/th?id=OIP.Cz-8T5Qijql2ek5oyUG1yQHaEK&pid=Api&P=0&h=180"
+            src="https://www.ashoknandavanam.com/images/project/ecr/plot.jpg"
             alt="Buy Land"
             className="w-full h-40 sm:h-48 md:h-56 object-cover"
           />

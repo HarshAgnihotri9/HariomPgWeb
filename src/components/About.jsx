@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import OptionsScreen from './OptionsScreen';
 import Facilities from './Facilities';
 import EnquiryForm from './EnquiryForm';
@@ -12,6 +12,9 @@ const AboutHariomPG = () => {
   const handleLearnMore = () => {
     navigate('/LearnMore');
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

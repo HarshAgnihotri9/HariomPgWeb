@@ -17,6 +17,7 @@ import LearnMore from './components/LearnMore';
 import FlatsScreen from './components/Flats/FlatsScreen';
 import PGScreen from './components/Pg/PgScreen';
 import DevicesScreen from './components/Flats/FlatsScreen';
+import ScrollToTop from './components/scrooltoTop';
 
 function App() {
   useEffect(() => {
@@ -66,6 +67,7 @@ function App() {
 
   return (
     <Router>
+       <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<AboutHariomPG />} />

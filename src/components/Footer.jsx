@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-100 pt-12 pb-8">
@@ -16,19 +19,19 @@ const Footer = () => {
           <h2 className="text-2xl font-bold mb-4">Quick Links</h2>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">Home</a>
+              <Link to="/" className="hover:text-green-400 transition-colors">Home</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">About Us</a>
+              <Link to="/About" className="hover:text-green-400 transition-colors">About Us</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">Facilities</a>
+              <Link to="/Services" className="hover:text-green-400 transition-colors">Facilities</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">Rooms</a>
+              <Link to="/Pgs" className="hover:text-green-400 transition-colors">Rooms</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">Contact Us</a>
+              <Link to="/contact" className="hover:text-green-400 transition-colors">Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -55,15 +58,15 @@ const Footer = () => {
         </p>
         <div className="flex justify-center space-x-6 mt-4">
           {/* Social Media Links */}
-          <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+          <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
             <i className="fab fa-facebook-f"></i> Facebook
-          </a>
-          <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+          </Link>
+          <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
             <i className="fab fa-instagram"></i> Instagram
-          </a>
-          <a href="#" className="text-gray-400 hover:text-green-400 transition-colors">
+          </Link>
+          <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
             <i className="fab fa-twitter"></i> Twitter
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
