@@ -20,6 +20,12 @@ import penthouse3 from '../../assets/2bhk/room.jpeg';
 
 // FlatsScreen Component
 const FlatsScreen = () => {
+
+  // Scroll to the top of the page when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white-100 py-10 mt-28">
       <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">Flats for Rent 🏘️</h1>

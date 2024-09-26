@@ -15,10 +15,39 @@ const EnquiryForm = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+
+    try {
+      // Correctly formatted URL
+      const response = await fetch('http://192.168.14.17:3001/api/user/EnquiryDetails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log(data);
+      alert('Enquiry submitted successfully');
+
+      // Reset form data to initial state
+      setFormData({
+        fullName: '',
+        phone: '',
+        propertyType: '',
+        roomOrBhkType: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting the enquiry', error);
+      alert('There was an error submitting the enquiry');
+    }
   };
 
   // Dynamically render room/BHK options based on selected property type
