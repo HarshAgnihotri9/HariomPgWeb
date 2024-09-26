@@ -20,7 +20,7 @@ const EnquiryForm = () => {
 
     try {
       // Correctly formatted URL
-      const response = await fetch('http://192.168.14.17:3001/api/user/EnquiryDetails', {
+      const response = await fetch('https://backend-production-b2d6.up.railway.app/api/user/EnquiryDetails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

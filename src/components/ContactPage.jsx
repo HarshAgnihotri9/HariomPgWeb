@@ -1,6 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: '',
+  });
+
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  // Update form data on input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null); // Reset error state
+    setSuccessMessage(''); // Reset success message
+
+    try {
+      const response = await fetch('https://backend-production-b2d6.up.railway.app/api/user/EnquiryDetails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setSuccessMessage('Message sent successfully!');
+      // Reset the form
+      alert("Thank you for sending us message. We will get you back")
+      setFormData({
+        name: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting the contact form', error);
+      setError('There was an error sending your message.');
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen mt-12">
       {/* Header Section */}
@@ -28,7 +77,7 @@ const ContactPage = () => {
                 </span>
                 <div>
                   <h3 className="text-xl font-medium">Our Address</h3>
-                  <p className="text-gray-600"> Hariom Pg sector 141 Shadara gali no 35 Noida </p>
+                  <p className="text-gray-600">Hariom PG sector 141 Shadara gali no 35 Noida</p>
                 </div>
               </li>
               <li className="flex items-start">
@@ -38,15 +87,6 @@ const ContactPage = () => {
                 <div>
                   <h3 className="text-xl font-medium">Phone Number</h3>
                   <p className="text-gray-600">+91 9084553059</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">
-                  ✉️
-                </span>
-                <div>
-                  <h3 className="text-xl font-medium">Email Address</h3>
-                  <p className="text-gray-600">hariompgandguesthouse@gmail.com</p>
                 </div>
               </li>
               <li className="flex items-start">
@@ -64,7 +104,8 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="bg-white shadow-md rounded-lg p-8">
             <h2 className="text-3xl font-semibold mb-6">Send Us a Message</h2>
-            <form className="space-y-6">
+            {error && <p className="text-red-600 mb-4">{error}</p>}
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-lg font-medium mb-2" htmlFor="name">
                   Full Name
@@ -73,19 +114,10 @@ const ContactPage = () => {
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   type="text"
                   id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Full Name"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-lg font-medium mb-2" htmlFor="email">
-                  Email Address
-                </label>
-                <input
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-                  type="email"
-                  id="email"
-                  placeholder="Your Email Address"
                   required
                 />
               </div>
@@ -97,9 +129,12 @@ const ContactPage = () => {
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   type="tel"
                   id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Your Phone Number"
                   required
-                />
+                  />
               </div>
               <div>
                 <label className="block text-lg font-medium mb-2" htmlFor="message">
@@ -108,11 +143,15 @@ const ContactPage = () => {
                 <textarea
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows="5"
                   placeholder="Your Message"
                   required
-                ></textarea>
+                  ></textarea>
               </div>
+              {successMessage && <p className="text-green-600 mb-4">{successMessage}</p>}
               <button
                 type="submit"
                 className="w-full bg-indigo-600 text-white py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition duration-300"
@@ -139,11 +178,6 @@ const ContactPage = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      {/* <footer className="bg-indigo-600 text-white py-6 text-center">
-        <p>&copy; 2024 HariomPG. All rights reserved.</p>
-      </footer> */}
     </div>
   );
 };
