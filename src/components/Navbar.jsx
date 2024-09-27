@@ -23,12 +23,14 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
+            <Link to="/" onClick={handleLinkClick}>
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-10 w-10 mr-2" />
+              <img src={logo} alt="Logo" className="h-10 w-10 mr-2" />
             <span className="text-2xl font-bold text-black-500 font-custom">
               HARIOM PG
             </span>
           </div>
+            </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6">

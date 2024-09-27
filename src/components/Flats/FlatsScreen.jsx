@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 // Importing images from the local assets folder
 import flat1 from '../../assets/2bhk/room1.jpeg'; 
 import flat2 from '../../assets/2bhk/room2.jpeg'; 
@@ -52,27 +54,52 @@ const FlatCard = ({ flat }) => {
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, [flat.images.length]);
 
-  const handleImageClick = () => {
+  // Navigate through images
+  const handleNextImage = (e) => {
+    e.stopPropagation(); // Prevent card click
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % flat.images.length);
   };
 
+  const handlePrevImage = (e) => {
+    e.stopPropagation(); // Prevent card click
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + flat.images.length) % flat.images.length);
+  };
+
   return (
-    <div className="bg-white-500 shadow-lg rounded-lg overflow-hidden">
-      <img
-        src={flat.images[currentImageIndex]}
-        alt={flat.type}
-        className="w-full h-48 object-cover cursor-pointer"
-        onClick={handleImageClick}
-      />
+    <Link to="/contact" className="bg-white-500 shadow-lg rounded-lg overflow-hidden cursor-pointer block">
+      <div className="relative">
+        <img
+          src={flat.images[currentImageIndex]}
+          alt={flat.type}
+          className="w-full h-48 object-cover"
+        />
+        {/* Left Arrow */}
+        <button
+          onClick={handlePrevImage}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full hover:bg-gray-200"
+        >
+          ◀
+        </button>
+        {/* Right Arrow */}
+        <button
+          onClick={handleNextImage}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full hover:bg-gray-200"
+        >
+          ▶
+        </button>
+      </div>
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-800">{flat.type}</h2>
         <p className="text-xl text-blue-500 font-semibold mt-2">{flat.price}</p>
         <p className="text-gray-600 mt-4">{flat.description}</p>
-        <button className="mt-6 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300">
+        <Link
+          to="/contact"
+          className="mt-6 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 inline-block"
+        >
           Contact for Rent
-        </button>
+        </Link>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,6 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BuyOptions = () => {
+  const navigate=useNavigate()
+  const handleClick= () => {
+navigate('/contact')
+  }
   return (
     <div className="min-h-screen bg-white-100 flex flex-col items-center justify-center py-8 px-4">
       {/* Title */}
@@ -22,7 +27,7 @@ const BuyOptions = () => {
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Discover modern flats for sale in premium locations.
             </p>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300">
+            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300" onClick={handleClick}>
               Learn More
             </button>
           </div>
@@ -40,7 +45,7 @@ const BuyOptions = () => {
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Find spacious and luxurious villas and kothis for your family.
             </p>
-            <button className="mt-4 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300">
+            <button className="mt-4 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300" onClick={handleClick}>
               Learn More
             </button>
           </div>
@@ -58,7 +63,7 @@ const BuyOptions = () => {
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Explore open plots and land for your dream project.
             </p>
-            <button className="mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition-colors duration-300">
+            <button className="mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition-colors duration-300" onClick={handleClick}>
               Learn More
             </button>
           </div>

@@ -12,9 +12,7 @@ const AboutHariomPG = () => {
   const handleLearnMore = () => {
     navigate('/LearnMore');
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <>

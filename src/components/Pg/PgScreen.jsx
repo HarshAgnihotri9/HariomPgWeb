@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 // Import images at the top
 import doubleSharing1 from '../../assets/pg/singlesharing.jpg';
@@ -19,7 +20,11 @@ const PGScreen = () => {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
         {pgs.map((pg) => (
-          <div key={pg.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <Link
+            key={pg.id}
+            to="/contact" // Navigate to contact page on click
+            className="block bg-white shadow-lg rounded-lg overflow-hidden"
+          >
             <img
               src={pg.image}
               alt={pg.type}
@@ -33,7 +38,7 @@ const PGScreen = () => {
                 Contact for Rent
               </button>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -46,7 +51,7 @@ const pgs = [
     id: 1,
     type: "Single Sharing",
     price: "₹12,000/month",
-    description: "Comfortable double sharing PG with modern amenities and ample space.",
+    description: "Comfortable single sharing PG with modern amenities and ample space.",
     image: doubleSharing1,
   },
   {

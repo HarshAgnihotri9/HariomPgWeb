@@ -1,4 +1,7 @@
 import React from 'react';
+import ownerImage from '../assets/images/parking.png'; // Example image path for owner
+import managerImage from '../assets/images/prakash.jpg'; // Example image path for manager
+import developerImage from '../assets/images/harsh.jpg'; // Example image path for developer
 
 const AboutPage = () => {
   return (
@@ -94,33 +97,33 @@ const AboutPage = () => {
           <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105">
             <img
               className="w-32 h-32 rounded-full mb-4 shadow-lg transform hover:scale-105 transition duration-300"
-              src="https://via.placeholder.com/150"
-              alt="John Doe"
+              src={ownerImage}
+              alt="Hari Singh"
             />
-            <h3 className="text-xl font-medium">John Doe</h3>
-            <p className="text-gray-600">Manager</p>
+            <h3 className="text-xl font-medium">Hari Singh</h3>
+            <p className="text-gray-600">Owner</p>
           </div>
 
           {/* Team Member 2 */}
           <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105">
             <img
               className="w-32 h-32 rounded-full mb-4 shadow-lg transform hover:scale-105 transition duration-300"
-              src="https://via.placeholder.com/150"
-              alt="Jane Smith"
+              src={managerImage}
+              alt="Prakash"
             />
-            <h3 className="text-xl font-medium">Jane Smith</h3>
-            <p className="text-gray-600">Head Chef</p>
+            <h3 className="text-xl font-medium">Prakash</h3>
+            <p className="text-gray-600">Manager</p>
           </div>
 
           {/* Team Member 3 */}
           <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105">
             <img
               className="w-32 h-32 rounded-full mb-4 shadow-lg transform hover:scale-105 transition duration-300"
-              src="https://via.placeholder.com/150"
-              alt="David Brown"
+              src={developerImage}
+              alt="Harsh Agnihotri"
             />
-            <h3 className="text-xl font-medium">David Brown</h3>
-            <p className="text-gray-600">Facilities Manager</p>
+            <h3 className="text-xl font-medium">Harsh Agnihotri</h3>
+            <p className="text-gray-600">Developer</p>
           </div>
         </div>
       </section>
