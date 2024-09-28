@@ -2,10 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const BuyOptions = () => {
-  const navigate=useNavigate()
-  const handleClick= () => {
-navigate('/contact')
-  }
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <div className="min-h-screen bg-white-100 flex flex-col items-center justify-center py-8 px-4">
       {/* Title */}
@@ -16,7 +18,10 @@ navigate('/contact')
       {/* Cards Container */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-4 md:px-8">
         {/* Card 1: Buy Flats */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+        <div
+          className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          onClick={handleClick}
+        >
           <img
             src="http://images.unsplash.com/photo-1558981082-c7d43331cd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZmxhdHN8fDB8fHx8MTYzMTY1MTEyMg&ixlib=rb-1.2.1&q=80&w=1080"
             alt="Buy Flats"
@@ -27,14 +32,14 @@ navigate('/contact')
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Discover modern flats for sale in premium locations.
             </p>
-            <button className="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300" onClick={handleClick}>
-              Learn More
-            </button>
           </div>
         </div>
 
         {/* Card 2: Buy Villas and Kothis */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+        <div
+          className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          onClick={handleClick}
+        >
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
             alt="Buy Villas and Kothis"
@@ -45,14 +50,14 @@ navigate('/contact')
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Find spacious and luxurious villas and kothis for your family.
             </p>
-            <button className="mt-4 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300" onClick={handleClick}>
-              Learn More
-            </button>
           </div>
         </div>
 
         {/* Card 3: Buy Land */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+        <div
+          className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          onClick={handleClick}
+        >
           <img
             src="https://www.ashoknandavanam.com/images/project/ecr/plot.jpg"
             alt="Buy Land"
@@ -63,9 +68,6 @@ navigate('/contact')
             <p className="text-gray-600 mt-2 text-sm sm:text-base">
               Explore open plots and land for your dream project.
             </p>
-            <button className="mt-4 px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition-colors duration-300" onClick={handleClick}>
-              Learn More
-            </button>
           </div>
         </div>
       </div>

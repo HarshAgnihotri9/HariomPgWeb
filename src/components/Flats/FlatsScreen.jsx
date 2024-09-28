@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; 
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // For arrows
 
 // Importing images from the local assets folder
 import flat1 from '../../assets/2bhk/room1.jpeg'; 
@@ -44,6 +45,7 @@ const FlatsScreen = () => {
 // FlatCard Component
 const FlatCard = ({ flat }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate(); // Hook for navigation
 
   // Automatically change image every 5 seconds
   useEffect(() => {
@@ -65,8 +67,16 @@ const FlatCard = ({ flat }) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + flat.images.length) % flat.images.length);
   };
 
+  // Navigate to /contact when the card (except the arrows) is clicked
+  const handleCardClick = () => {
+    navigate("/contact"); // Navigate to the contact page
+  };
+
   return (
-    <Link to="/contact" className="bg-white-500 shadow-lg rounded-lg overflow-hidden cursor-pointer block">
+    <div 
+      onClick={handleCardClick} // Card click handler
+      className="bg-white-500 shadow-lg rounded-lg overflow-hidden cursor-pointer block"
+    >
       <div className="relative">
         <img
           src={flat.images[currentImageIndex]}
@@ -78,28 +88,22 @@ const FlatCard = ({ flat }) => {
           onClick={handlePrevImage}
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full hover:bg-gray-200"
         >
-          ◀
+          <FaArrowLeft />
         </button>
         {/* Right Arrow */}
         <button
           onClick={handleNextImage}
           className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full hover:bg-gray-200"
         >
-          ▶
+          <FaArrowRight />
         </button>
       </div>
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-800">{flat.type}</h2>
         <p className="text-xl text-blue-500 font-semibold mt-2">{flat.price}</p>
         <p className="text-gray-600 mt-4">{flat.description}</p>
-        <Link
-          to="/contact"
-          className="mt-6 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300 inline-block"
-        >
-          Contact for Rent
-        </Link>
       </div>
-    </Link>
+    </div>
   );
 };
 
@@ -110,7 +114,7 @@ const flats = [
     type: "2BHK Flat",
     price: "₹25,000/month",
     description: "Spacious 2-bedroom flat with modern amenities and a great view.",
-    images: [flat1, flat2, flat3,flat4,flat5,flat6,flat7,flat8,flat9],
+    images: [flat1, flat2, flat3, flat4, flat5, flat6, flat7, flat8, flat9],
   },
   {
     id: 2,

@@ -20,7 +20,7 @@ const AboutHariomPG = () => {
       <div
         className="bg-cover bg-center h-screen flex items-center justify-center relative"
         style={{
-          backgroundImage: `url('https://rook.gumlet.io/uploads/center/cover_photo/64c7c1e40fe9100001f8e41f/7___2024_07_09T175023.678.jpg?format=webp&h=auto&compress=true&ar=1')`,
+          backgroundImage: `url('https://cdn.leonardo.ai/users/0298cbdc-98dc-4afd-8540-13bd3e13871d/generations/b0c4b244-2439-45c8-9410-35ed048900ba/Leonardo_Phoenix_A_cozy_minimalist_room_with_a_single_bed_feat_0.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>

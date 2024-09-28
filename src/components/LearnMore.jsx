@@ -40,7 +40,7 @@ const LearnMore = () => {
             <p className="text-gray-600 mb-4">
               Located near major educational institutions and business hubs, Hariom PG offers easy access to all necessities like shopping, dining, and commuting.
             </p>
-            <a href="/location" className="text-blue-600 hover:underline">
+            <a href="/contact" className="text-blue-600 hover:underline">
               Find Us on the Map &rarr;
             </a>
           </div>

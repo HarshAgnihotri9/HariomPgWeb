@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     message: '',
+    propertyType: '',
+    roomOrBhkType: '',
   });
 
   const [error, setError] = useState(null);
@@ -35,18 +37,65 @@ const ContactPage = () => {
       }
 
       const data = await response.json();
-      console.log(data);
       setSuccessMessage('Message sent successfully!');
+      alert("Thank you for sending us message. We will get you back");
+
       // Reset the form
-      alert("Thank you for sending us message. We will get you back")
       setFormData({
         name: '',
         phone: '',
         message: '',
+        propertyType: '',
+        roomOrBhkType: '',
       });
     } catch (error) {
-      console.error('Error submitting the contact form', error);
       setError('There was an error sending your message.');
+    }
+  };
+
+  // Dynamically render BHK/Room options based on selected property type
+  const renderRoomOrBhkOptions = () => {
+    switch (formData.propertyType) {
+      case 'flats':
+        return (
+          <div>
+            <label className="block text-lg font-medium mb-2">BHK Type</label>
+            <select
+              name="roomOrBhkType"
+              value={formData.roomOrBhkType}
+              onChange={handleChange}
+              className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              required
+            >
+              <option value="">Select BHK type</option>
+              <option value="1BHK">1 BHK</option>
+              <option value="2BHK">2 BHK</option>
+              <option value="3BHK">3 BHK</option>
+              <option value="4BHK">4 BHK</option>
+            </select>
+          </div>
+        );
+      case 'pgs':
+        return (
+          <div>
+            <label className="block text-lg font-medium mb-2">Sharing Type</label>
+            <select
+              name="roomOrBhkType"
+              value={formData.roomOrBhkType}
+              onChange={handleChange}
+              className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+              required
+            >
+              <option value="">Select sharing type</option>
+              <option value="single">Single Room</option>
+              <option value="double">Double Sharing</option>
+              <option value="triple">Triple Sharing</option>
+              <option value="four">Four Sharing</option>
+            </select>
+          </div>
+        );
+      default:
+        return null; // No additional fields for "Land"
     }
   };
 
@@ -72,27 +121,21 @@ const ContactPage = () => {
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">
-                  📍
-                </span>
+                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">📍</span>
                 <div>
                   <h3 className="text-xl font-medium">Our Address</h3>
                   <p className="text-gray-600">Hariom PG sector 141 Shadara gali no 35 Noida</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">
-                  📞
-                </span>
+                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">📞</span>
                 <div>
                   <h3 className="text-xl font-medium">Phone Number</h3>
                   <p className="text-gray-600">+91 9084553059</p>
                 </div>
               </li>
               <li className="flex items-start">
-                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">
-                  🕒
-                </span>
+                <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">🕒</span>
                 <div>
                   <h3 className="text-xl font-medium">Working Hours</h3>
                   <p className="text-gray-600">Mon - Sat: 9:00 AM - 7:00 PM</p>
@@ -107,9 +150,7 @@ const ContactPage = () => {
             {error && <p className="text-red-600 mb-4">{error}</p>}
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-lg font-medium mb-2" htmlFor="name">
-                  Full Name
-                </label>
+                <label className="block text-lg font-medium mb-2" htmlFor="name">Full Name</label>
                 <input
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   type="text"
@@ -121,10 +162,9 @@ const ContactPage = () => {
                   required
                 />
               </div>
+
               <div>
-                <label className="block text-lg font-medium mb-2" htmlFor="phone">
-                  Phone Number
-                </label>
+                <label className="block text-lg font-medium mb-2" htmlFor="phone">Phone Number</label>
                 <input
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   type="tel"
@@ -134,12 +174,29 @@ const ContactPage = () => {
                   onChange={handleChange}
                   placeholder="Your Phone Number"
                   required
-                  />
+                />
               </div>
+
               <div>
-                <label className="block text-lg font-medium mb-2" htmlFor="message">
-                  Message
-                </label>
+                <label className="block text-lg font-medium mb-2">Looking For</label>
+                <select
+                  name="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleChange}
+                  className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                  required
+                >
+                  <option value="">Select a property type</option>
+                  <option value="land">Searching Land</option>
+                  <option value="flats">Searching Flats (Buy/Rent)</option>
+                  <option value="pgs">Searching PG</option>
+                </select>
+              </div>
+
+              {renderRoomOrBhkOptions()}
+
+              <div>
+                <label className="block text-lg font-medium mb-2" htmlFor="message">Message</label>
                 <textarea
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   id="message"
@@ -149,8 +206,9 @@ const ContactPage = () => {
                   rows="5"
                   placeholder="Your Message"
                   required
-                  ></textarea>
+                ></textarea>
               </div>
+
               {successMessage && <p className="text-green-600 mb-4">{successMessage}</p>}
               <button
                 type="submit"

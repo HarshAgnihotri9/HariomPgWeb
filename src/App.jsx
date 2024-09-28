@@ -81,6 +81,7 @@ function App() {
         <Route path="/LearnMore" element={<LearnMore/>} />
         <Route path="/Flats" element={<DevicesScreen/>} />
         <Route path="/Pgs" element={<PGScreen/>} />
+        <Route path="/facilities" element={<Facilities/>} />
 
         
 
