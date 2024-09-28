@@ -1,7 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
 import ownerImage from     '/assets/images/parking.png'; // Example image path for owner
 import managerImage from   '/assets/images/prakash.jpg'; // Example image path for manager
 import developerImage from '/assets/images/harsh.jpg'; // Example image path for developer
+=======
+import ownerImage from     '/public/assets/images/parking.png'; // Example image path for owner
+import managerImage from   '/public/assets/images/prakash.jpg'; // Example image path for manager
+import developerImage from '/public/assets/images/harsh.jpg'; // Example image path for developer
+>>>>>>> 82b3bfa
 
 const AboutPage = () => {
   return (

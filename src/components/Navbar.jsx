@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import logo from '/assets/images/logo.png';
+=======
+import logo from '/public/assets/images/logo.png';
+>>>>>>> 82b3bfa
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
