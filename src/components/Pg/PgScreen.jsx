@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import doubleSharing1 from '/public/assets/pg/singlesharing.jpg';
 import tripleSharing1 from '/public/assets/pg/triplesharing.jpg';
 import fourSharing1 from   '/public/assets/pg/foursharing.jpg';
-import doubleSharing2 from '/public/assets/pg/doublesharing2.jpg';
+import doubleSharing2 from '/public/assets/pg/Doublesharing2.jpg';
 
 // PGScreen Component
 const PGScreen = () => {
