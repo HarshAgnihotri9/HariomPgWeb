@@ -3,23 +3,23 @@ import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavi
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // For arrows
 
 // Importing images from the local assets folder
-import flat1 from '../../../public/assets/2bhk/room.jpeg'; 
-import flat2 from '../../../public/assets/2bhk/room2.jpeg'; 
-import flat3 from '../../../public/assets/2bhk/room3.jpeg'; 
-import flat4 from '../../../public/assets/2bhk/galery.jpeg'; 
-import flat5 from '../../../public/assets/2bhk/gallery2.jpeg'; 
-import flat6 from '../../../public/assets/2bhk/kichen.jpeg'; 
-import flat7 from '../../../public/assets/2bhk/outsideview.jpeg'; 
-import flat8 from '../../../public/assets/2bhk/toilet.jpeg'; 
-import flat9 from '../../../public/assets/2bhk/Wodrob.jpeg'; 
+import flat1 from '/assets/2bhk/room.jpeg'; 
+import flat2 from '/assets/2bhk/room2.jpeg'; 
+import flat3 from '/assets/2bhk/room3.jpeg'; 
+import flat4 from '/assets/2bhk/galery.jpeg'; 
+import flat5 from '/assets/2bhk/gallery2.jpeg'; 
+import flat6 from '/assets/2bhk/kichen.jpeg'; 
+import flat7 from '/assets/2bhk/outsideview.jpeg'; 
+import flat8 from '/assets/2bhk/toilet.jpeg'; 
+import flat9 from '/assets/2bhk/Wodrob.jpeg'; 
 
-import studio1 from '../../../public/assets/2bhk/room2.jpeg'; 
-import studio2 from '../../../public/assets/2bhk/room3.jpeg'; 
-import studio3 from '../../../public/assets/2bhk/room.jpeg'; 
+import studio1 from '/assets/2bhk/room2.jpeg'; 
+import studio2 from '/assets/2bhk/room3.jpeg'; 
+import studio3 from '/assets/2bhk/room.jpeg'; 
 
-import penthouse1 from '../../../public/assets/2bhk/room3.jpeg'; 
-import penthouse2 from '../../../public/assets/2bhk/room2.jpeg'; 
-import penthouse3 from '../../../public/assets/2bhk/room.jpeg'; 
+import penthouse1 from '/assets/2bhk/room3.jpeg'; 
+import penthouse2 from '/assets/2bhk/room2.jpeg'; 
+import penthouse3 from '/assets/2bhk/room.jpeg'; 
 
 // FlatsScreen Component
 const FlatsScreen = () => {
