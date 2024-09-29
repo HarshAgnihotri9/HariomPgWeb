@@ -44,10 +44,10 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
           <p className="text-gray-300 text-base">
-            <strong>Phone:</strong> +91 90845 53059
+            <strong>Phone:</strong> +91 93108 21158
           </p>
           <p className="text-gray-300 text-base">
-            <strong>Email:</strong> hariompganddguesthouse@hariompg.com
+            <strong>Email:</strong> hariompganddguesthouse@gmail.com
           </p>
           <p className="text-gray-300 text-base">
             <strong>Address:</strong> Hariom PG, Sector 141, Shahdara, Gali Number 35

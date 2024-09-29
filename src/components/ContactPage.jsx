@@ -131,7 +131,7 @@ const ContactPage = () => {
                 <span className="bg-indigo-600 text-white p-3 rounded-full mr-4">📞</span>
                 <div>
                   <h3 className="text-xl font-medium">Phone Number</h3>
-                  <p className="text-gray-600">+91 9084553059</p>
+                  <p className="text-gray-600">+91 93108 21158</p>
                 </div>
               </li>
               <li className="flex items-start">
