@@ -23,42 +23,46 @@ const OptionsScreen = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 w-full max-w-5xl mt-8 animate-slide-up">
         {/* Flats Option */}
         <div
-          className="cursor-pointer transform hover:scale-110 transition-transform duration-500 bg-white shadow-xl rounded-lg p-8 flex flex-col items-center hover:bg-blue-100 group"
+          className="cursor-pointer transform hover:scale-105 transition-transform duration-500 bg-white shadow-xl rounded-lg overflow-hidden flex flex-col group"
           onClick={handleFlatsClick}
         >
-          <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-6">
+          {/* Image on top half */}
+          <div className="w-full h-48 sm:h-64">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROQHLNkgUFmvUH_Knlvkus7KXF2kWdXu7E1A&s"
+              src="https://cdn.leonardo.ai/users/0298cbdc-98dc-4afd-8540-13bd3e13871d/generations/56763b39-48d6-4050-8ff0-50fd77dccf1b/Leonardo_Phoenix_An_elegant_and_modern_apartment_complex_with_1.jpg"
               alt="Flats Option"
-              className="w-full h-full object-cover rounded-full border-4 border-blue-400 group-hover:shadow-lg transition-shadow duration-500"
+              className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-500"
             />
-            {/* Icon Animation */}
-            <div className="absolute inset-0 bg-blue-200 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-500"></div>
           </div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Flats</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center group-hover:text-blue-500 transition-colors duration-300">
-            Discover beautiful flats for rent
-          </p>
+          {/* Text on bottom half */}
+          <div className="p-6 text-center bg-white">
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Flats</h2>
+            <p className="text-gray-500 mt-2 text-sm sm:text-base text-center group-hover:text-blue-500 transition-colors duration-300">
+              Discover beautiful flats for rent
+            </p>
+          </div>
         </div>
 
         {/* PGs Option */}
         <div
-          className="cursor-pointer transform hover:scale-110 transition-transform duration-500 bg-white shadow-xl rounded-lg p-8 flex flex-col items-center hover:bg-purple-100 group"
+          className="cursor-pointer transform hover:scale-105 transition-transform duration-500 bg-white shadow-xl rounded-lg overflow-hidden flex flex-col group"
           onClick={handlePGsClick}
         >
-          <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-6">
+          {/* Image on top half */}
+          <div className="w-full h-48 sm:h-64">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPATFHYgbFakeR3L8GFAXSjLh4TJ1xPiK_aA&s"
+              src="https://cdn.leonardo.ai/users/0298cbdc-98dc-4afd-8540-13bd3e13871d/generations/b0c4b244-2439-45c8-9410-35ed048900ba/Leonardo_Phoenix_A_cozy_minimalist_room_with_a_single_bed_feat_1.jpg"
               alt="PGs Option"
-              className="w-full h-full object-cover rounded-full border-4 border-purple-400 group-hover:shadow-lg transition-shadow duration-500"
+              className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-500"
             />
-            {/* Icon Animation */}
-            <div className="absolute inset-0 bg-purple-200 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-500"></div>
           </div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">PGs</h2>
-          <p className="text-gray-500 mt-2 text-sm sm:text-base text-center group-hover:text-purple-500 transition-colors duration-300">
-            Find comfortable PG accommodations
-          </p>
+          {/* Text on bottom half */}
+          <div className="p-6 text-center bg-white">
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">PGs</h2>
+            <p className="text-gray-500 mt-2 text-sm sm:text-base text-center group-hover:text-purple-500 transition-colors duration-300">
+              Find comfortable PG accommodations
+            </p>
+          </div>
         </div>
       </div>
     </div>
