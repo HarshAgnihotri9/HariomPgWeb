@@ -50,7 +50,7 @@ const Footer = () => {
             <strong>Email:</strong> hariompganddguesthouse@hariompg.com
           </p>
           <p className="text-gray-300 text-base">
-            <strong>Address:</strong> Hariom PG, Sector 14, Shahdara, Gali Number 35
+            <strong>Address:</strong> Hariom PG, Sector 141, Shahdara, Gali Number 35
           </p>
         </div>
         
