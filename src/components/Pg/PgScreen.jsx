@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
 // Import images at the top
-import doubleSharing1 from '/public/assets/pg/singlesharing.jpg';
-import tripleSharing1 from '/public/assets/pg/triplesharing.jpg';
-import fourSharing1 from   '/public/assets/pg/foursharing.jpg';
-import doubleSharing2 from '/public/assets/pg/Doublesharing2.jpg';
+import doubleSharing1 from '/assets/pg/singlesharing.jpg';
+import tripleSharing1 from '/assets/pg/triplesharing.jpg';
+import fourSharing1 from   '/assets/pg/foursharing.jpg';
+import doubleSharing2 from '/assets/pg/Doublesharing2.jpg';
 
 // PGScreen Component
 const PGScreen = () => {

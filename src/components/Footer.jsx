@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'; // Import social icons
-import logo from '/public/assets/images/logo.png'; // Import your logo image
+import logo from '/assets/images/logo.png'; // Import your logo image
 
 const Footer = () => {
   return (

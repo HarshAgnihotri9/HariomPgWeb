@@ -42,7 +42,7 @@ const ContactPage = () => {
 
       // Reset the form
       setFormData({
-        name: '',
+        fullName: '',
         phone: '',
         message: '',
         propertyType: '',
