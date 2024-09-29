@@ -23,7 +23,7 @@ const BuyOptions = () => {
           onClick={handleClick}
         >
           <img
-            src="http://images.unsplash.com/photo-1558981082-c7d43331cd8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZmxhdHN8fDB8fHx8MTYzMTY1MTEyMg&ixlib=rb-1.2.1&q=80&w=1080"
+            src="https://cdn.leonardo.ai/users/0298cbdc-98dc-4afd-8540-13bd3e13871d/generations/bd47f333-aae6-4dbc-ae82-20374e8fb586/Leonardo_Phoenix_A_panoramic_view_of_a_modern_apartment_compl_1.jpg"
             alt="Buy Flats"
             className="w-full h-40 sm:h-48 md:h-56 object-cover"
           />
