@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-100 py-12 relative">
       {/* Decorative Background Image */}
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('/path-to-your-background.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div className="absolute inset-0 opacity-20" style={{  backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
         
         {/* Logo & Tagline Section */}
