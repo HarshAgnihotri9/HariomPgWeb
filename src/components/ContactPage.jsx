@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     fullName: '',
-    phone: '',
+    phone: '+91 ', // Initialize with country code
     propertyType: '',
     roomOrBhkType: '',
     message: '',
@@ -17,7 +17,20 @@ const ContactPage = () => {
 
   // Update form data on input change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Handle phone input
+    if (name === 'phone') {
+      // If user tries to input anything other than the initial country code, reset the phone input
+      if (value.length < 4 || !value.startsWith('+91 ')) {
+        setFormData({ ...formData, phone: '+91 ' }); // Reset to country code
+      } else {
+        // Update the phone number with the current value
+        setFormData({ ...formData, phone: value });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   // Update OTP input on change
@@ -30,7 +43,8 @@ const ContactPage = () => {
     e.preventDefault();
     setError(null); // Reset error state
     setSuccessMessage(''); // Reset success message
-console.log(formData);
+
+    console.log(formData);
 
     try {
       const response = await fetch('https://backend-production-b2d6.up.railway.app/api/user/SubmitEnquiry', {
@@ -81,7 +95,7 @@ console.log(formData);
       // Reset form and state
       setFormData({
         fullName: '',
-        phone: '',
+        phone: '+91 ', // Reset with country code
         propertyType: '',
         roomOrBhkType: '',
         message: '',
@@ -214,7 +228,7 @@ console.log(formData);
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Your Phone Number"
+                    placeholder="Enter your phone number"
                     required
                   />
                 </div>
@@ -222,11 +236,10 @@ console.log(formData);
                 <div>
                   <label className="block text-lg font-medium mb-2" htmlFor="propertyType">Property Type</label>
                   <select
-                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-                    id="propertyType"
                     name="propertyType"
                     value={formData.propertyType}
                     onChange={handleChange}
+                    className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                     required
                   >
                     <option value="">Select Property Type</option>
@@ -236,7 +249,6 @@ console.log(formData);
                   </select>
                 </div>
 
-                {/* Conditionally render Room or BHK options */}
                 {renderRoomOrBhkOptions()}
 
                 <div>
@@ -252,15 +264,10 @@ console.log(formData);
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500"
-                >
-                  Send Enquiry
-                </button>
+                <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded-lg">Send Message</button>
               </form>
             ) : (
-              // OTP Verification Form
+              // OTP input field
               <form className="space-y-6" onSubmit={handleOtpSubmit}>
                 <div>
                   <label className="block text-lg font-medium mb-2" htmlFor="otp">Enter OTP</label>
@@ -271,35 +278,18 @@ console.log(formData);
                     name="otp"
                     value={otp}
                     onChange={handleOtpChange}
-                    placeholder="OTP"
+                    placeholder="Enter OTP"
                     required
                   />
                 </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500"
-                >
-                  Submit OTP & Save Enquiry
-                </button>
+                <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded-lg">Verify OTP</button>
               </form>
             )}
+
             {successMessage && <p className="text-green-600 mt-4">{successMessage}</p>}
           </div>
-
         </div>
       </main>
-
-      {/* Google Maps Section */}
-      <section className="w-full h-96 mt-12">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.917180415559!2d77.33996887599916!3d28.5454410871666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce59864000001%3A0x8d2a7fce72c28fe0!2sHariom%20PG!5e0!3m2!1sen!2sin!4v1696068016346!5m2!1sen!2sin"
-          className="w-full h-full border-0"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </section>
     </div>
   );
 };

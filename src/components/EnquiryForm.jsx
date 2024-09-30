@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
-    phone: '',
+    phone: '+91 ',
     propertyType: '',
     roomOrBhkType: '',
     message: '',
@@ -16,7 +16,18 @@ const EnquiryForm = () => {
   const [isOtpSent, setIsOtpSent] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === 'phone') {
+      // If user tries to change the phone input, reset it to '+91 ' if it is not valid
+      if (value.length < 4 || !value.startsWith('+91 ')) {
+        setFormData({ ...formData, phone: '+91 ' });
+      } else {
+        setFormData({ ...formData, [name]: value });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleOtpChange = (e) => {
@@ -74,7 +85,7 @@ const EnquiryForm = () => {
       // Reset form and state
       setFormData({
         fullName: '',
-        phone: '',
+        phone: '+91 ',
         propertyType: '',
         roomOrBhkType: '',
         message: '',
@@ -148,7 +159,7 @@ const EnquiryForm = () => {
           {!isOtpSent ? (
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-lg font-medium mb-2" htmlFor="name">Full Name</label>
+                <label className="block text-lg font-medium mb-2" htmlFor="fullName">Full Name</label>
                 <input
                   className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
                   type="text"
