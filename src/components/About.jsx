@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import OptionsScreen from './OptionsScreen';
 import Facilities from './Facilities';
 import EnquiryForm from './EnquiryForm';
@@ -6,13 +6,14 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
 import BuyOptions from './BuyOptions';
+import backgroundImage from '/assets/images/SingleRoom.jpg'; // Update with your image path
 
 const AboutHariomPG = () => {
   const navigate = useNavigate();
+  
   const handleLearnMore = () => {
     navigate('/LearnMore');
   };
-
 
   return (
     <>
@@ -20,7 +21,7 @@ const AboutHariomPG = () => {
       <div
         className="bg-cover bg-center h-screen flex items-center justify-center relative"
         style={{
-          backgroundImage: `url('https://cdn.leonardo.ai/users/0298cbdc-98dc-4afd-8540-13bd3e13871d/generations/b0c4b244-2439-45c8-9410-35ed048900ba/Leonardo_Phoenix_A_cozy_minimalist_room_with_a_single_bed_feat_0.jpg')`,
+          backgroundImage: `url(${backgroundImage})`, // Use the imported image here
         }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -49,7 +50,6 @@ const AboutHariomPG = () => {
       {/* Other sections */}
       <OptionsScreen />
       <BuyOptions />
-      {/* <PGList /> */}
       <Facilities />
       <EnquiryForm />
       {/* <Footer /> */}
