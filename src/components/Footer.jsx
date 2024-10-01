@@ -78,8 +78,8 @@ const Footer = () => {
             &copy; 2024 Hariom PG. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">Privacy Policy</Link>
-            <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">Terms of Service</Link>
+            <Link to="/Privacy" className="text-gray-400 hover:text-green-400 transition-colors">Privacy Policy</Link>
+            <Link to="/Terms" className="text-gray-400 hover:text-green-400 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

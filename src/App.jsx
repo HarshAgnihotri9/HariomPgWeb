@@ -12,6 +12,8 @@ import LearnMore from './components/LearnMore';
 import PGScreen from './components/Pg/PgScreen';
 import DevicesScreen from './components/Flats/FlatsScreen';
 import ScrollToTop from './components/scrooltoTop';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsAndConditions from './components/TermsandCondition';
 
 function App() {
   useEffect(() => {
@@ -76,6 +78,9 @@ function App() {
         <Route path="/Flats" element={<DevicesScreen/>} />
         <Route path="/Pgs" element={<PGScreen/>} />
         <Route path="/facilities" element={<Facilities/>} />
+        <Route path="/Privacy" element={<PrivacyPolicy/>} />
+        <Route path="/Terms" element={<TermsAndConditions/>} />
+
 
         
 
