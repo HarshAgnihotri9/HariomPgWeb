@@ -61,7 +61,7 @@ const Footer = () => {
             <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
               <FaFacebookF />
             </Link>
-            <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
+            <Link to="https://www.instagram.com/hariompgandflats/" className="text-gray-400 hover:text-green-400 transition-colors">
               <FaInstagram />
             </Link>
             <Link to="#" className="text-gray-400 hover:text-green-400 transition-colors">
